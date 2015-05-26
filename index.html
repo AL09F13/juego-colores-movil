@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+ 
+  <title>Mi aplicacion</title>
+
+  <!--grupo CSS-->
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="css/jquery.mobile.icons-1.4.5.min.css" />
+  <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" /> 
+  <link rel="stylesheet" href="css/miestilo.css" />
+        
+        
+
+
+  <!--grupo JavaScript-->
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/acciones.js" type="text/javascript"></script>
+  <script src="phonegap.js" type="text/javascript"></script>
+ </head>
+
+ <body>
+
+ <!-- Principal -->
+ <div data-role="page" id="principal" align="center" > 
+ 
+ <h1>Aplicacion07 </h1>
+   
+
+  <div data-role="main" class="ui-content" align="center">
+  
+    <a href="#tablero" class="ui-btn ui-shadow ui-btn-corner-all ui-icon-arrow-r ui-btn-inline ui-btn-icon-right" id="btn_jugar"> Jugar... </a>
+
+  </div>
+
+  <div data-role="footer">
+    <h1>@LuisEduardo</h1>
+  </div>
+ </div>  
+ <!-- Principal -->
+ 
+ 
+ 
+  <!-- Juego -->
+
+ <div data-role="page" id="tablero" >
+ 
+ <div id="encabezado" align="center">
+  <h1> Aplicacion07 </h1>
+  </div>
+    
+
+  <div data-role="main" class="ui-content">
+  
+   <div id="B1" style="background-color:#09C", class="cuadro"> &nbsp;
+   </div>
+   <div id="B2" style="background-color:#0F6", class="cuadro"> &nbsp;
+   </div>
+   <div id="B3" style="background-color:#FF3", class="cuadro"> &nbsp;
+   </div>
+   <div id="B4" style="background-color:#F00", class="cuadro"> &nbsp;
+   </div>
+   
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+  
+  <h3> <div id="pantalla"> PULSO...:</div> </h3>
+ 
+  </div>
+  
+ </div>
+
+ 
+ <!-- Juego -->
+ 
+</body>
+</html> 
