@@ -1,6 +1,21 @@
 // JavaScript Document
 $(document).ready(function(e) {
 document.addEventListener("deviceready",function(){
+	
+	audio = windows.plugins.LowLatencyAudio;
+	
+	audio.preloadFX('B1', 'audio/C.cmp3', function(){},
+	function(msg) { alert("error "+ msg);});
+	
+	audio.preloadFX('B2', 'audio/D.cmp3', function(){},
+	function(msg) { alert("error "+ msg);});
+	
+	audio.preloadFX('B3', 'audio/E.cmp3', function(){},
+	function(msg) { alert("error "+ msg);});
+	
+	audio.preloadFX('B4', 'audio/F.cmp3', function(){},
+	function(msg) { alert("error "+ msg);});
+	
 	$('#btn_jugar').on('click', function(){
 		var pantalla = $.mobile.getScreenHeight();
 		var encabezado = $('.ui-header').outerHeight();

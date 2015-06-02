@@ -5,7 +5,7 @@
      id    = "com.phonegap.Esqueleto"  
      version  = "1.0.0">  
 	 
-   <name> Nombre </name>  
+   <name> juego de colores </name>  
    
    <description>  
      Primer Ejemplo de eventos
@@ -19,7 +19,7 @@
    <preference name="phonegap-version"      value="3.7.0" />    
    <preference name="orientation"        value="portrait" />    
    <preference name="target-device"       value="universal" />   
-   <preference name="fullscreen"         value="true" />      
+   <preference name="fullscreen"         value="false" />      
    <preference name="android-installLocation"  value="auto" />  
    <preference name="SplashScreen" value="splash"/>
    <preference name="SplashScreenDelay" value="5000"/>
@@ -29,7 +29,10 @@
    <!-- Core plugins -->  
 
    <gap:plugin name="org.apache.cordova.splashscreen" version="0.3.4" />  
-   <gap:plugin name="org.apache.cordova.vibration" />  
+   <gap:plugin name="org.apache.cordova.vibration" /> 
+   <gap:plugin name="com.rjfun.cordova.plugin.lowlatencyaudio" version="1.1.3" /> 
+   
+   <!--plugins de 3ras personas
 
    <!-- Third party plugins -->  
    
