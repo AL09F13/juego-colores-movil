@@ -4,16 +4,16 @@ document.addEventListener("deviceready",function(){
 	
 	audio = window.plugins.LowLatencyAudio;
 	
-	audio.preloadFX('B1', 'audio/C.cmp3', function(){},
+	audio.preloadFX('B1', 'audio/C.mp3', function(){},
 	function(msg) { alert("error "+ msg);});
 	
-	audio.preloadFX('B2', 'audio/D.cmp3', function(){},
+	audio.preloadFX('B2', 'audio/D.mp3', function(){},
 	function(msg) { alert("error "+ msg);});
 	
-	audio.preloadFX('B3', 'audio/E.cmp3', function(){},
+	audio.preloadFX('B3', 'audio/E.mp3', function(){},
 	function(msg) { alert("error "+ msg);});
 	
-	audio.preloadFX('B4', 'audio/F.cmp3', function(){},
+	audio.preloadFX('B4', 'audio/F.mp3', function(){},
 	function(msg) { alert("error "+ msg);});
 	
 	$('#btn_jugar').on('click', function(){
