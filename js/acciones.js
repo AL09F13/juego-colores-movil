@@ -2,7 +2,7 @@
 $(document).ready(function(e) {
 document.addEventListener("deviceready",function(){
 	
-	audio = windows.plugins.LowLatencyAudio;
+	audio = window.plugins.LowLatencyAudio;
 	
 	audio.preloadFX('B1', 'audio/C.cmp3', function(){},
 	function(msg) { alert("error "+ msg);});
