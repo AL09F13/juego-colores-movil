@@ -31,6 +31,7 @@ document.addEventListener("deviceready",function(){
 		
 		function quien (q)
 	{
+		audio.play (q);
 		return q.substring(1);
 	}	
 		
