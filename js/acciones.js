@@ -5,6 +5,22 @@ document.addEventListener("deviceready",function(){
 	var basedatos = window.sqlitePlugin.
 	openDatabase({name: "coloresBD.db", createFromLocation:1});
 	
+	
+	audio = window.plugins.LowLatencyAudio;
+	
+	audio.preloadFX('B1', 'audio/C.mp3', function(){},
+	function(msg) { alert("error "+ msg);});
+	
+	audio.preloadFX('B2', 'audio/D.mp3', function(){},
+	function(msg) { alert("error "+ msg);});
+	
+	audio.preloadFX('B3', 'audio/E.mp3', function(){},
+	function(msg) { alert("error "+ msg);});
+	
+	audio.preloadFX('B4', 'audio/F.mp3', function(){},
+	function(msg) { alert("error "+ msg);});
+	
+	
 	cargarnombrejugador();
 	
 	function cargarnombrejugador()
@@ -20,20 +36,6 @@ document.addEventListener("deviceready",function(){
 	}
 	
 	
-	
-	audio = window.plugins.LowLatencyAudio;
-	
-	audio.preloadFX('B1', 'audio/C.mp3', function(){},
-	function(msg) { alert("error "+ msg);});
-	
-	audio.preloadFX('B2', 'audio/D.mp3', function(){},
-	function(msg) { alert("error "+ msg);});
-	
-	audio.preloadFX('B3', 'audio/E.mp3', function(){},
-	function(msg) { alert("error "+ msg);});
-	
-	audio.preloadFX('B4', 'audio/F.mp3', function(){},
-	function(msg) { alert("error "+ msg);});
 	
 	$('#btn_jugar').on('click', function(){
 		var pantalla = $.mobile.getScreenHeight();
