@@ -20,8 +20,9 @@ document.addEventListener("deviceready",function(){
 	audio.preloadFX('B4', 'audio/F.mp3', function(){},
 	function(msg) { alert("error "+ msg);});
 	
+		
+	});
 	
-	cargarnombrejugador();
 	
 	function cargarnombrejugador()
 	{
@@ -46,9 +47,30 @@ document.addEventListener("deviceready",function(){
 		$('.cuadro').height(alto);
 		});//btnjugar.click
 		
+		
 		$('.cuadro').on('mousedown', function(){
 			$(this).addClass('pulsado');
-			});//mousedown
+		
+		
+		});//mousedown
+		
+		
+		
+		
+		$('#btn_config').on ('tap', function (){
+		$('#txtnombre').val($('#jugador').text());
+	});
+	
+	$('#btn_guardar').on('tap', function(){
+		var nuevonombre=$('#txtnombre').val();
+		basedatos.transaction(function(consulta){
+			consulta.executeSql("UPDATE Usuario SET NombreUsuario=? WHERE ClaveUsuario='1';",[nuevonombre]);
+		
+		});
+		
+		
+		cargarnombrejugador();
+		
 		
 		function quien (q)
 	{
