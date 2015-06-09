@@ -15,7 +15,7 @@ document.addEventListener("deviceready",function(){
 	function(msg) { alert("error "+ msg);});
 	
 	audio.preloadFX('B3', 'audio/E.mp3', function(){},
-	function(msg) { alert("error "+ msg);});
+	function(msg) { alert("error "+ msg);});                                                                                 
 	
 	audio.preloadFX('B4', 'audio/F.mp3', function(){},
 	function(msg) { alert("error "+ msg);});
@@ -48,13 +48,17 @@ document.addEventListener("deviceready",function(){
 		});//btnjugar.click
 		
 		
-		$('.cuadro').on('mousedown', function(){
-			$(this).addClass('pulsado');
+		//$('.cuadro').on('mousedown', function(){
+			//$(this).addClass('pulsado');
 		
 		
-		});//mousedown
+		//});//mousedown
 		
-		
+		//$('.cuadro').on('mouseup', function (){
+			//$('#pantalla').append(quien($(this).attr('id')));
+			//$(this).removeClass('pulsado');
+		//});
+	
 		
 		
 		$('#btn_config').on ('tap', function (){
@@ -77,12 +81,20 @@ document.addEventListener("deviceready",function(){
 		audio.play (q);
 		return q.substring(1);
 	}	
-		
-		$('.cuadro').on('mouseup', function (){
-			$('#pantalla').append(quien($(this).attr('id')));
-			$(this).removeClass('pulsado');
-		});
-
+	
+	
+	
+	function flash(boton)
+	{
+		boton.stop().animate({opacity:'0.5'}, {
+			duration: 80,
+			complete: function(){
+				boton.stop().animate({opacity:'1'}, 200);
+			}
 	});
+	}
+
 });
+});
+
 	
