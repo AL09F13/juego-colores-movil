@@ -2,6 +2,36 @@
 $(document).ready(function(e) {
 document.addEventListener("deviceready",function(){
 	
+	function flash(boton)
+	{
+		boton.stop().animate({opacity:'1.5'}, {
+			duration: 80,
+			complete: function(){
+				boton.stop().animate({opacity:'1'}, 200);
+	}
+			});
+	}
+	
+	
+	
+	cargarnombrejugador();
+		
+		
+		function quien (q)
+	{
+		audio.play (q);
+		return q.substring(1);
+	}	
+	
+	
+	
+	$('.cuadro').on('tap', function(){
+		flash($(this)),
+		audio.play(($this).attr('id'));
+	});
+	
+	
+	
 	var basedatos = window.sqlitePlugin.
 	openDatabase({name: "coloresBD.db", createFromLocation:1});
 	
@@ -29,7 +59,7 @@ document.addEventListener("deviceready",function(){
 		basedatos.transaction(function(ejecutar){
 			var sql="SELECT NombreUsuario FROM Usuario";
 			
-			ejecutar.executeSql(sql, undefined, function(ejecutar, resultado){
+		ejecutar.executeSql(sql, undefined, function(ejecutar, resultado){
 				var datosJugador=resultado.rows.item(0);
 				$('#jugador').text(datosJugador.NombreUsuario);
 			});
@@ -45,24 +75,13 @@ document.addEventListener("deviceready",function(){
 		var contenido = $('ui.content').outerHeight();
 		var alto = (pantalla - encabezado - pie)/2;
 		$('.cuadro').height(alto);
+		
 		});//btnjugar.click
 		
-		
-		//$('.cuadro').on('mousedown', function(){
-			//$(this).addClass('pulsado');
-		
-		
-		//});//mousedown
-		
-		//$('.cuadro').on('mouseup', function (){
-			//$('#pantalla').append(quien($(this).attr('id')));
-			//$(this).removeClass('pulsado');
-		//});
-	
-		
-		
 		$('#btn_config').on ('tap', function (){
+			
 		$('#txtnombre').val($('#jugador').text());
+		
 	});
 	
 	$('#btn_guardar').on('tap', function(){
@@ -73,35 +92,18 @@ document.addEventListener("deviceready",function(){
 		});
 		
 		
-		cargarnombrejugador();
+		
+	
+		//$('.cuadro').on('mousedown', function(){
+			//$(this).addClass('pulsado');
 		
 		
-		function quien (q)
-	{
-		audio.play (q);
-		return q.substring(1);
-	}	
-	
-	
-	
-	function flash(boton)
-	{
-		boton.stop().animate({opacity:'0.5'}, {
-			duration: 80,
-			complete: function(){
-				boton.stop().animate({opacity:'1'}, 200);
-			}
-	});
-	}
-	
-	
-	$('.cuadro').on('tap', function(){
-		flash($(this)),
-		audio.play(($this).attr('id'));
-	});
-	
-	
-	
+		//});//mousedown
+		
+		//$('.cuadro').on('mouseup', function (){
+			//$('#pantalla').append(quien($(this).attr('id')));
+			//$(this).removeClass('pulsado');
+		//});
 
 });
 });
