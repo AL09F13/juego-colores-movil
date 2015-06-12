@@ -14,24 +14,6 @@ document.addEventListener("deviceready",function(){
 	
 	
 	
-	cargarnombrejugador();
-		
-		
-		function quien (q)
-	{
-		audio.play (q);
-		return q.substring(1);
-	}	
-	
-	
-	
-	$('.cuadro').on('tap', function(){
-		flash($(this)),
-		audio.play(($this).attr('id'));
-	});
-	
-	
-	
 	var basedatos = window.sqlitePlugin.
 	openDatabase({name: "coloresBD.db", createFromLocation:1});
 	
@@ -51,6 +33,22 @@ document.addEventListener("deviceready",function(){
 	function(msg) { alert("error "+ msg);});
 	
 		
+	});
+	
+	cargarnombrejugador();
+		
+		
+		function quien (q)
+	{
+		audio.play (q);
+		return q.substring(1);
+	}	
+	
+	
+	
+	$('.cuadro').on('tap', function(){
+		flash($(this)),
+		audio.play(($this).attr('id'));
 	});
 	
 	
@@ -92,6 +90,9 @@ document.addEventListener("deviceready",function(){
 		});
 		
 		
+
+});
+});
 		
 	
 		//$('.cuadro').on('mousedown', function(){
@@ -104,8 +105,5 @@ document.addEventListener("deviceready",function(){
 			//$('#pantalla').append(quien($(this).attr('id')));
 			//$(this).removeClass('pulsado');
 		//});
-
-});
-});
 
 	
