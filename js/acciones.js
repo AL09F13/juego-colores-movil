@@ -2,20 +2,22 @@
 $(document).ready(function(e) {
 document.addEventListener("deviceready",function(){
 	
-	function flash(boton)
-	{
-		boton.stop().animate({opacity:'1.5'}, {
-			duration: 80,
-			complete: function(){
-				boton.stop().animate({opacity:'1'}, 200);
-	}
-			});
-	}
-	
-	
-	
 	var basedatos = window.sqlitePlugin.
 	openDatabase({name: "coloresBD.db", createFromLocation:1});
+	
+	$('.cuadro').on('tap', function(){
+		flash($(this)),
+		audio.play(($this).attr('id'));
+	});
+	
+	cargarnombrejugador();
+		
+		
+		function quien (q)
+	{
+		audio.play (q);
+		return q.substring(1);
+	}	
 	
 	
 	audio = window.plugins.LowLatencyAudio;
@@ -35,22 +37,17 @@ document.addEventListener("deviceready",function(){
 		
 	});
 	
-	cargarnombrejugador();
-		
-		
-		function quien (q)
+	function flash(boton)
 	{
-		audio.play (q);
-		return q.substring(1);
-	}	
+		boton.stop().animate({opacity:'1.5'}, {
+			duration: 80,
+			complete: function(){
+				boton.stop().animate({opacity:'1'}, 200);
+	}
+			});
+	}
 	
-	
-	
-	$('.cuadro').on('tap', function(){
-		flash($(this)),
-		audio.play(($this).attr('id'));
-	});
-	
+
 	
 	function cargarnombrejugador()
 	{
